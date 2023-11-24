@@ -48,7 +48,8 @@ for(let element of fhi_reminder) {
     let dosagequantity = element.dosageQuantity;
     let whenTotake = element.whenToTake;
     let tabletId = element.id;
-    scheduleDailyNotification(notificationHour, notificationMinute, tabletname, tabletimage,dosagequantity,whenTotake,tabletId);
+    let path = window.location.href;
+    scheduleDailyNotification(notificationHour, notificationMinute, tabletname, tabletimage,dosagequantity,whenTotake,tabletId,path);
   }
 }
 
@@ -63,7 +64,7 @@ if (msg) {
 }
 }
 
-function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId) {
+function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId,path) {
     if (!("Notification" in window)) {
       alert("This browser does not support desktop notification");
     } else if (Notification.permission === "granted") {
@@ -72,7 +73,7 @@ function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId) {
             image: tabletimage
           });
           notification.onclick = function () {
-            window.open(`http://127.0.0.1:5500/pages/pillreminder.html?fromNotification=true&tabletId=${tabletId}`);
+            window.open(`${path}?fromNotification=true&tabletId=${tabletId}`);
         };
     } else if (Notification.permission !== "denied") {
       // We need to ask the user for permission
@@ -83,14 +84,14 @@ function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId) {
                 image: tabletimage
             });
             notification.onclick = function () {
-                window.open(`http://127.0.0.1:5500/pages/pillreminder.html?fromNotification=true&tabletId=${tabletId}`);
+                window.open(`${path}?fromNotification=true&tabletId=${tabletId}`);
             };
         }
       });
     }
 }
 
-  function scheduleDailyNotification(hour, minute, tabletname, tabletimage,dosagequantity, whenTotake,tabletId) {
+  function scheduleDailyNotification(hour, minute, tabletname, tabletimage,dosagequantity, whenTotake,tabletId,path) {
     const now = new Date();
     const scheduledTime = new Date(
       now.getFullYear(),
@@ -105,7 +106,7 @@ function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId) {
   
     if (timeUntilNotification > 0) {
       setTimeout(() => {
-        notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId);
+        notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId,path);
       }, timeUntilNotification);
     }
   }
