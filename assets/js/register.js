@@ -28,7 +28,7 @@ if(name.trim() === "") {
     alert("password length should be greater than 8");
 } else {
 
-let fhi_register = JSON.parse(localStorage.getItem("fhi_register"));
+let fhi_register = JSON.parse(localStorage.getItem("fhi_register"))  || [];
 let checkemail = fhi_register.find((user) => user.email == email);
 if(checkemail){
    alert("User Already Exist! kindly Login");
