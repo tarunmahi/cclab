@@ -70,7 +70,9 @@ function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId,pat
     } else if (Notification.permission === "granted") {
         const notification = new Notification("Medicine Reminder", {
             body: `Did you take ${tabletname}?\nYou have to take the medicine quantity of ${dosagequantity}.\nYou must take the medicine ${whenTotake}.`,
-            image: tabletimage
+            image: tabletimage,
+            requireInteraction: true,
+            vibrate: [200, 100, 200]
           });
           notification.onclick = function () {
             window.open(`${path}?fromNotification=true&tabletId=${tabletId}`);
@@ -81,7 +83,9 @@ function notifyMe(tabletname, tabletimage,dosagequantity,whenTotake,tabletId,pat
         if (permission === "granted") {
             const notification = new Notification("Medicine Reminder", {
                 body: `Did you take ${tabletname}?\nYou have to take the medicine quantity of ${dosagequantity}.\nYou must take the medicine ${whenTotake}.`,
-                image: tabletimage
+                image: tabletimage,
+                requireInteraction: true,
+                vibrate: [200, 100, 200]
             });
             notification.onclick = function () {
                 window.open(`${path}?fromNotification=true&tabletId=${tabletId}`);
