@@ -20,7 +20,7 @@ if(email.trim() === "") {
 } else if(!/[^a-zA-Z0-9]/.test(password)) {
     alert("password must contains atleast symbols");
 } else {
-    let fhi_register = JSON.parse(localStorage.getItem("fhi_register"));
+    let fhi_register = JSON.parse(localStorage.getItem("fhi_register")) || [];
     let checkemail = fhi_register.find((user) => user.email == email && user.password == password);
     if(checkemail){
         localStorage.setItem("fhi_login",JSON.stringify(email));
