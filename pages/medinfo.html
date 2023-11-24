@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | FHI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/medinfo.css">
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <div>
+        <img class="website-logo" src="../assets/images/Screenshot_2023-11-19_215102-removebg-preview.png" class="title" alt="logo">
+        </div>
+
+    <div class="right-div">
+        <div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pillreminder.html">Pill Reminder</a>
+        <a href="#home">Family</a>
+        <a href="medinfo.html">MedInfo</a>
+        </div>
+        <div class="btn-div">
+            <i class="fa fa-user white-icon" onclick="profile()"></i>
+            <i class="fa fa-search white-icon" onclick="search()"></i>
+        </div>
+    </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="search-container" id="search-container">
+      <div>
+        <input type="search" name="search" placeholder="Search the Keywords Here..." id="searchbar">
+        <button type="button" id="search-btn">Search</button>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <div class="breadcrumb">
+        &emsp;&nbsp;<a href="home.html" style="color: blue; text-decoration: none;"><p>Home</p></a>
+        <p>></p>
+        <p>MedInfo</p>
+    </div>
+
+    <div class="s1-container">
+        <div class="search-meds-container">
+            <div>
+            <i class="fa fa-search white-icon" id="search-icon"></i>
+            </div>
+            <div>
+                <input type="search" name="search-meds" id="search-meds" placeholder="Enter Medicine Name Here...">
+            </div>
+        </div>
+    </div>
+
+    <div id="drugInfo"></div>
+    <div id="termsandconditions">
+    <h2>Terms of Use</h2>
+    <p><span style="color:red;">*</span> Users are requested to read the following terms and conditions before use</p>
+    <p><span>Purpose of the Search</span>: The medicine search feature is designed to help users find general information about medications. It's not a substitute for professional medical advice.</p>
+    <p><span>Information Source</span>: The search results aggregate data from various sources but may not encompass all medications or provide comprehensive details. The information is intended for educational purposes only.</p>
+    <p><span>Scope of Information</span>: The search results might not cover all available medications and may lack comprehensive details. Users should consult healthcare professionals for accurate and personalized medical advice.</p>
+    <p><span>Accuracy and Reliability</span>: While efforts are made to ensure accuracy, the information retrieved through the search feature might not always be up-to-date or error-free. We do not guarantee the accuracy, completeness, or timeliness of the information provided.</p>
+    <p><span>Not Personalized Advice</span>: The search results do not constitute medical advice tailored to individual situations or health conditions. Users should seek guidance from qualified healthcare professionals for personalized advice.</p>
+    <p><span>For Informational Purposes Only</span>: Users are encouraged to use the search feature for informational purposes. The information obtained should not be solely relied upon without consulting healthcare providers.</p>
+    <p><span>Understanding Risks</span>: There are inherent risks associated with relying solely on information from the search feature. Users should be aware of the limitations and potential inaccuracies of the data presented.</p>
+    <p><span>Responsibility</span>: The company is not responsible for any actions taken based solely on the information obtained through the search feature. Users are solely responsible for their decisions and actions related to health based on this information.</p>
+    <p><span>Verification of Information</span>: Users are advised to verify and cross-reference the information obtained from the search feature with reliable sources or healthcare professionals before making any medical decisions.</p>
+    <p><span>Continual Updates and Modifications</span>: The company reserves the right to modify, update, or remove the search feature or its content at any time without prior notice.</p>
+    </div>
+
+
+<script src="../assets/js/medinfo.js"></script>
+<script src="../assets/js/home.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Edit Pill | FHI</title>
+    <link rel="stylesheet" href="../assets/css/addpill.css">
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <div>
+        <img class="website-logo" src="../assets/images/Screenshot_2023-11-19_215102-removebg-preview.png" class="title" alt="logo">
+        </div>
+
+    <div class="right-div">
+        <div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pillreminder.html">Pill Reminder</a>
+        <a href="#home">Family</a>
+        <a href="medinfo.html">MedInfo</a>
+        </div>
+        <div class="btn-div">
+            <i class="fa fa-user white-icon" onclick="profile()"></i>
+            <i class="fa fa-search white-icon" onclick="search()"></i>
+        </div>
+    </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="search-container" id="search-container">
+      <div>
+        <input type="search" name="search" placeholder="Search the Keywords Here..." id="search">
+        <button type="button" id="search-btn">Search</button>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <div class="breadcrumb">
+        &emsp;&nbsp;<a href="../pages/home.html" style="color: blue; text-decoration: none;"><p>Home</p></a>
+        <p>></p>
+        <a href="../pages/pillreminder.html" style="color: blue; text-decoration: none;"><p>Pill Reminder</p></a>
+        <p>></p>
+        <p>Edit Pill</p>
+    </div>
+    <!-- breadcrumb end -->
+    <div class="form-container">
+        <h3 class="h1-form">Edit Tablet Information</h3>
+        <form id="tabletForm">
+        <div class="form-inputs">
+        <div>
+          <label for="tabletName">Tablet Name:</label><br>
+          <input type="text" id="tabletName" placeholder="Enter Tablet Name" required><br><br>
+
+          <label for="tabletCount">Tablet Count:</label><br>
+          <input type="number" id="tabletCount" placeholder="Enter Tablet Count" required><br><br>
+    
+          <label for="tabletImage">Tablet Image: <span style="color:red;">*</span></label><br>
+          <input type="file" id="tabletImage" accept="image/*"><br><br>
+
+          <label for="dosageType">Dosage Type:</label><br>
+          <select id="dosageType" required>
+            <option value="" disabled selected>Select Dosage Type</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Liquid">Liquid</option>
+            <option value="Capsule">Capsule</option>
+          </select><br><br>
+        </div>
+        <div>
+          <label for="dosageQuantity">Dosage Quantity:</label><br>
+          <select id="dosageQuantity" required>
+            <option value="" disabled selected>Select Dosage Quantity</option>
+            <option value="1 Tablet">1 Tablet</option>
+            <option value="2 Tablets">2 Tablets</option>
+            <option value="3 Tablets">3 Tablets</option>
+            <option value="5 ml">5 ml</option>
+            <option value="10 ml">10 ml</option>
+            <option value="15 ml">15 ml</option>
+          </select><br><br>
+
+          <label for="whenToTake">When to Take Medicine:</label><br>
+          <select id="whenToTake" required>
+            <option value="" disabled selected>Select</option>
+            <option value="before_meals">Before Meals</option>
+            <option value="after_meals">After Meals</option>
+          </select><br><br>
+
+          <label for="timeForMedicine">Time for Taking Medicine:</label><br>
+          <input type="time" id="timeForMedicine" required><br><br>
+        </div>
+        </div>
+          <button type="submit" id="edittablet">Edit Tablet</button>
+        </form>
+      </div>
+
+<script src="../script.js"></script>
+<script src="../assets/js/home.js"></script>
+<script src="../assets/js/edittablet.js"></script>
+</body>
+</html>
