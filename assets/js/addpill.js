@@ -59,8 +59,9 @@
 
 
 let fhi_register = JSON.parse(localStorage.getItem("fhi_register"));
+console.log(fhi_register);
 let fhi_login = JSON.parse(localStorage.getItem("fhi_login"));
-
+console.log(fhi_login);
 // Retrieve the email of the logged-in user
 let checkemail = fhi_register.find((user) => user.email === fhi_login);
 
@@ -109,10 +110,12 @@ form.addEventListener("submit", (event) => {
     if (localStorage.getItem("fhi_reminder") !== null) {
       let fhi_reminder = JSON.parse(localStorage.getItem("fhi_reminder"));
       fhi_reminder.push(medicationData);
+      console.log(medicationData);
       localStorage.setItem("fhi_reminder", JSON.stringify(fhi_reminder));
     } else {
       let fhi_reminder = [medicationData];
       localStorage.setItem("fhi_reminder", JSON.stringify(fhi_reminder));
+      console.log(fhi_reminder);
     }
 
     // Save medication data to Firebase Firestore under the user’s document
