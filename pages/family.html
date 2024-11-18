@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pill Reminder | FHI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/pillreminder.css">
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <div>
+        <img class="website-logo" src="../assets/images/Screenshot_2023-11-19_215102-removebg-preview.png" class="title" alt="logo">
+        </div>
+
+    <div class="right-div">
+        <div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pillreminder.html">Pill Reminder</a>
+        <a href="Family.html">Family</a>
+        <a href="medinfo.html">MedInfo</a>
+        </div>
+        <div class="btn-div">
+            <i class="fa fa-user white-icon" onclick="profile()"></i>
+            <i class="fa fa-search white-icon" onclick="search()"></i>
+        </div>
+    </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="search-container" id="search-container">
+      <div>
+        <input type="search" name="search" placeholder="Search the Keywords Here..." id="search">
+        <button type="button" id="search-btn">Search</button>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <div class="breadcrumb">
+        &emsp;&nbsp;<a href="../pages/home.html" style="color: blue; text-decoration: none;"><p>Home</p></a>
+        <p>></p>
+        <p>Pill Reminder</p>
+    </div>
+    <!-- breadcrumb end -->
+
+    <div>
+        <form action="addfamily.html">
+            <button type="submit" class="addpill" id="addpill"><span><i class="fa fa-plus" id="plus"></i></span> Add Family</button>
+        </form>
+    </div>
+
+
+    <div id="tabletlist"></div>
+
+<script src="../assets/js/family.js"></script>
+<script src="../assets/js/home.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

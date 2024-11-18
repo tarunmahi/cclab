@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Add Pill | FHI</title>
+    <link rel="stylesheet" href="../assets/css/addpill.css">
+</head>
+<body>
+    <div class="topnav" id="topnav">
+        <div>
+        <img class="website-logo" src="../assets/images/Screenshot_2023-11-19_215102-removebg-preview.png" class="title" alt="logo">
+        </div>
+
+    <div class="right-div">
+        <div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="pillreminder.html">Pill Reminder</a>
+        <a href="family.html">Family</a>
+        <a href="medinfo.html">MedInfo</a>
+        </div>
+        <div class="btn-div">
+            <i class="fa fa-user white-icon" onclick="profile()"></i>
+            <i class="fa fa-search white-icon" onclick="search()"></i>
+        </div>
+    </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="responsive()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="search-container" id="search-container">
+      <div>
+        <input type="search" name="search" placeholder="Search the Keywords Here..." id="search">
+        <button type="button" id="search-btn">Search</button>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <div class="breadcrumb">
+        &emsp;&nbsp;<a href="../pages/home.html" style="color: blue; text-decoration: none;"><p>Home</p></a>
+        <p>></p>
+        <a href="../pages/family.html" style="color: blue; text-decoration: none;"><p>Family</p></a>
+        <p>></p>
+        <p>Add Family</p>
+    </div>
+    <!-- breadcrumb end -->
+    <div class="form-container">
+        <h3 class="h1-form">Add Family Information</h3>
+       
+        <!-- <div class="form-inputs">
+        <div>
+          <label for="tabletName">Family Member Name:</label><br>
+          <input type="text" id="tabletName" placeholder="Enter Tablet Name" required><br><br>
+    
+          <label for="tabletCount">Family Member Relation</label><br>
+          <input type="number" id="tabletCount" placeholder="Enter Tablet Count" required><br><br>
+
+          <label for="tabletImage">Family Member Image:</label><br>
+          <input type="file" id="tabletImage" accept="image/*"><br><br>
+
+          <label for="dosageType">DOB:</label><br>
+            <input id = "dosageType" type="date" >
+            
+        <br><br>
+        </div>
+        <div>
+          <label for="dosageQuantity">Dosage Quantity:</label><br>
+          <select id="dosageQuantity" required>
+            <option value="" disabled selected>Select Dosage Quantity</option>
+            <option value="1 Tablet">1 Tablet</option>
+            <option value="2 Tablets">2 Tablets</option>
+            <option value="3 Tablets">3 Tablets</option>
+            <option value="5 ml">5 ml</option>
+            <option value="10 ml">10 ml</option>
+            <option value="15 ml">15 ml</option>
+          </select><br><br>
+
+          <label for="whenToTake">When to Take Medicine:</label><br>
+          <select id="whenToTake" required>
+            <option value="" disabled selected>Select</option>
+            <option value="before_meals">Before Meals</option>
+            <option value="after_meals">After Meals</option>
+          </select><br><br>
+
+          <label for="timeForMedicine">Time for Taking Medicine:</label><br>
+          <input type="time" id="timeForMedicine" required><br><br>
+        </div>
+        </div>
+          <button type="submit" id="addtablet">Add Tablet</button>
+        </form> -->
+        <form id="famForm">
+            <div class="form-inputs">
+                <div>
+                    <label for="family_name">Family Member Name:</label><br>
+                    <input type="text" id="family_name" placeholder="Enter Family Member Name" required><br><br>
+        
+                    <label for="rel">Relationship with Root:</label><br>
+                    <input type="text" id="rel" placeholder="Enter Relationship (e.g., Son, Daughter, etc.)" required><br><br>
+        
+                    <label for="tabletImage">Family Member Image:</label><br>
+                    <input type="file" id="tabletImage" accept="image/*"><br><br>
+        
+                    <label for="dob">Date of Birth (DOB):</label><br>
+                    <input type="date" id="dob" required><br><br>
+                </div>
+                <div>
+                    <label for="age">Age:</label><br>
+                    <input type="number" id="age" placeholder="Enter Age" required><br><br>
+        
+                    <label for="phone_num">Phone Number:</label><br>
+                    <input type="tel" id="phone_num" placeholder="Enter Phone Number" pattern="[0-9]{10}" required><br><br>
+        
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" placeholder="Enter Email Address" required><br><br>
+        
+                    <label for="medicalConditions">Medical Conditions (if any):</label><br>
+                    <textarea id="medicalConditions" placeholder="Enter any medical conditions" rows="4" cols="30"></textarea><br><br>
+                </div>
+            </div>
+            <button type="submit" id="addtablet">Add Family Member</button>
+        </form>
+      </div>
+
+<script src="../script.js"></script>
+<script src="../assets/js/home.js"></script>
+<script src="../assets/js/addfamily.js"></script>
+<script src ="../assets/js/family.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+      apiKey: "AIzaSyDWe7j0M89wupFfwhFUkJwTGf92HbbrXS4",
+      authDomain: "fir-apk-e5d86.firebaseapp.com",
+      databaseURL: "https://fir-apk-e5d86-default-rtdb.firebaseio.com",
+      projectId: "fir-apk-e5d86",
+      storageBucket: "fir-apk-e5d86.firebasestorage.app",
+      messagingSenderId: "1070451636448",
+      appId: "1:1070451636448:web:fb29cf13babc2a5441f885",
+      measurementId: "G-KRDJHNBC8V"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+</script>
+
+<!-- Add Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+</body>
+</html>

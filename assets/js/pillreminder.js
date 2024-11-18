@@ -1,44 +1,44 @@
 let fhi_reminder = JSON.parse(localStorage.getItem("fhi_reminder"));
 let fhi_login = JSON.parse(localStorage.getItem("fhi_login"));
-let container = document.getElementById("tabletlist");
-for(let element of fhi_reminder) {
-  if(element.email == fhi_login) {
-    let div = document.createElement("div");
-    div.setAttribute("class","reminder-container");
-    div.innerHTML = `
-    <img class="tablet-image" src="${element.tabletImage}" alt="Tablet Image">
-    <table>
-      <tr>
-        <th>Tablet Name</th>
-        <td>${element.tabletName}</td>
-      </tr>
-      <tr>
-        <th>Tablet Remaining</th>
-        <td>${(element.tabletCount > 1) ? element.tabletCount + " Tablets" : element.tabletCount + " Tablet"}</td>
-      </tr>
-      <tr>
-        <th>Dosage Type</th>
-        <td>${element.dosageType}</td>
-      </tr>
-      <tr>
-        <th>Dosage Quantity</th>
-        <td>${element.dosageQuantity}</td>
-      </tr>
-      <tr>
-        <th>When to Take</th>
-        <td>${element.whenToTake}</td>
-      </tr>
-      <tr>
-        <th>Time for Medicine</th>
-        <td>${element.timeForMedicine}</td>
-      </tr>
-    </table>
-    <div style="margin-top: 20px;">
-    <a href="edittablet.html?id=${element.id}" class="btn">Edit</a>
-    <button type="button" id="delete" onclick="deletetablet(${element.id})" class="btn">Delete</button>
-  </div>
-    `;
-    container.append(div);
+  let container = document.getElementById("tabletlist");
+  for(let element of fhi_reminder) {
+    if(element.email == fhi_login) {
+      let div = document.createElement("div");
+      div.setAttribute("class","reminder-container");
+      div.innerHTML = `
+      <img class="tablet-image" src="${element.tabletImage}" alt="Tablet Image">
+      <table>
+        <tr>
+          <th>Tablet Name</th>
+          <td>${element.tabletName}</td>
+        </tr>
+        <tr>
+          <th>Tablet Remaining</th>
+          <td>${(element.tabletCount > 1) ? element.tabletCount + " Tablets" : element.tabletCount + " Tablet"}</td>
+        </tr>
+        <tr>
+          <th>Dosage Type</th>
+          <td>${element.dosageType}</td>
+        </tr>
+        <tr>
+          <th>Dosage Quantity</th>
+          <td>${element.dosageQuantity}</td>
+        </tr>
+        <tr>
+          <th>When to Take</th>
+          <td>${element.whenToTake}</td>
+        </tr>
+        <tr>
+          <th>Time for Medicine</th>
+          <td>${element.timeForMedicine}</td>
+        </tr>
+      </table>
+      <div style="margin-top: 20px;">
+      <a href="edittablet.html?id=${element.id}" class="btn">Edit</a>
+      <button type="button" id="delete" onclick="deletetablet(${element.id})" class="btn">Delete</button>
+    </div>
+      `;
+      container.append(div);
 
     let splittime = element.timeForMedicine.split(":"); 
     const notificationHour = splittime[0]; 
