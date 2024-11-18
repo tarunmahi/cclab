@@ -81,12 +81,8 @@
             <option value="15 ml">15 ml</option>
           </select><br><br>
 
-          <label for="whenToTake">When to Take Medicine:</label><br>
-          <select id="whenToTake" required>
-            <option value="" disabled selected>Select</option>
-            <option value="before_meals">Before Meals</option>
-            <option value="after_meals">After Meals</option>
-          </select><br><br>
+          <label for="whenToTake"> Medicine For :</label><br>
+          <input type="text" id="whenToTake" placeholder="Family member Name ">
 
           <label for="timeForMedicine">Time for Taking Medicine:</label><br>
           <input type="time" id="timeForMedicine" required><br><br>
@@ -105,6 +101,7 @@
 <!-- Firebase App (the core Firebase SDK) -->
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+
 <script>
   const firebaseConfig = {
       apiKey: "AIzaSyDWe7j0M89wupFfwhFUkJwTGf92HbbrXS4",
@@ -122,5 +119,6 @@
 
 <!-- Add Firebase Firestore -->
 <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+
 </body>
 </html>

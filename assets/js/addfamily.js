@@ -7,7 +7,7 @@ console.log(fhi_login);
 // Retrieve the email of the logged-in user
 let checkemail = fhi_register.find((user) => user.email === fhi_login);
 console.log("hii");
-let form = document.getElementById("famForm");
+let form = document.getElementById("Form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

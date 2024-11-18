@@ -69,7 +69,7 @@
 //     return false;
 // };
 
-
+const api='http://localhost:3000';
 
 
 let form = document.getElementById("form");
@@ -113,16 +113,30 @@ form.addEventListener("submit", (event) => {
             fhi_register.push(obj);
             localStorage.setItem("fhi_register", JSON.stringify(fhi_register));
 
-            // Save to Firebase Firestore
-            firebase.firestore().collection("users").add(obj)
-                .then(() => {
+            axios.post(`${api}/register`, obj)
+            .then((response) => {
+                if (response.status === 200) {
                     alert("Registration successful!");
                     window.location.href = "../pages/login.html";
-                })
-                .catch((error) => {
-                    console.error("Error adding document to Firebase: ", error);
-                    alert("Error saving to Firebase.");
-                });
+                } else {
+                    alert("Error in registration.");
+                }
+            })
+            .catch((error) => {
+                console.error("Error sending request to backend: ", error);
+                alert("Error saving to server.");
+            });
+
+            // Save to Firebase Firestore
+            // firebase.firestore().collection("users").add(obj)
+            //     .then(() => {
+            //         alert("Registration successful!");
+            //         window.location.href = "../pages/login.html";
+            //     })
+            //     .catch((error) => {
+            //         console.error("Error adding document to Firebase: ", error);
+            //         alert("Error saving to Firebase.");
+            //     });
         }
     }
 });
